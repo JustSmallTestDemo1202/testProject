@@ -1,0 +1,279 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246fb4aa575ec5546ab2747bc133928b, type: 3}
+  m_Name: IK Aim
+  m_EditorClassIdentifier: 
+  states:
+  - id: 3d8ebc42-9eee-469f-baca-bf0045994795
+    position:
+      serializedVersion: 2
+      x: 60
+      y: 120
+      width: 150
+      height: 30
+    title: ' Any State'
+    typeString: AnyState
+    description: 
+    stateActions: []
+    transitions: []
+    update: []
+    ikActions: []
+    isDefaultState: 0
+    properties: []
+    applyRootMotion: 0
+  - id: 39d87c88-2242-45eb-b8e7-b6ee9cf7a0f8
+    position:
+      serializedVersion: 2
+      x: 77.8000412
+      y: 366
+      width: 150
+      height: 30
+    title: Shooting
+    typeString: SimpleState
+    description: 
+    stateActions:
+    - type: 3
+      targetType: 0
+      stringValue: Player
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    transitions:
+    - fromState: 39d87c88-2242-45eb-b8e7-b6ee9cf7a0f8
+      toState: 2256f1f8-c3dd-461f-93a2-5b43b014c4e1
+      conditions:
+      - type: 11
+        floatVal: 0
+        floatVal2: 0
+        stringValue: Shot
+        boolValue: 0
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: Idle -> Shot
+    update:
+    - type: 14
+      targetType: 0
+      stringValue: 
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 0
+      intValue: 1
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 14
+      targetType: 0
+      stringValue: 
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 0
+      intValue: 2
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 10
+      targetType: 0
+      stringValue: PlayerInRange
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 0
+      intValue: 1
+      boolValue: 1
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    ikActions:
+    - type: 5
+      ikGoal: 2
+      weight: 1
+      bodyWeight: .400000006
+      headWeight: 1
+      eyesWeight: 1
+      clampWeight: 1
+      vector3Value: {x: 0, y: 0, z: 0}
+      stringValue: Player
+      setFloatType: 0
+    - type: 4
+      ikGoal: 2
+      weight: 1
+      bodyWeight: .699999988
+      headWeight: .800000012
+      eyesWeight: .800000012
+      clampWeight: 1
+      vector3Value: {x: 0, y: 0, z: 0}
+      stringValue: Player
+      setFloatType: 0
+    - type: 1
+      ikGoal: 3
+      weight: 1
+      bodyWeight: 0
+      headWeight: 0
+      eyesWeight: 0
+      clampWeight: 0
+      vector3Value: {x: 0, y: 0, z: 0}
+      stringValue: Player
+      setFloatType: 0
+    - type: 0
+      ikGoal: 3
+      weight: 1
+      bodyWeight: 0
+      headWeight: 0
+      eyesWeight: 0
+      clampWeight: 0
+      vector3Value: {x: 0, y: 0, z: 0}
+      stringValue: Player
+      setFloatType: 0
+    isDefaultState: 1
+    properties: []
+    applyRootMotion: 1
+  - id: 2256f1f8-c3dd-461f-93a2-5b43b014c4e1
+    position:
+      serializedVersion: 2
+      x: 323
+      y: 301
+      width: 150
+      height: 30
+    title: Shot
+    typeString: AttackState
+    description: 
+    stateActions:
+    - type: 1
+      targetType: 2
+      stringValue: Finish
+      gameObjectValue: {fileID: 100000, guid: de3811773d77c524ea68c6244e40be65, type: 2}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 12
+      targetType: 3
+      stringValue: Finish
+      gameObjectValue: {fileID: 100000, guid: de3811773d77c524ea68c6244e40be65, type: 2}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 8300000, guid: 0af3d513283ae634480aa98a0d2da839, type: 3}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 4
+      targetType: 3
+      stringValue: Finish
+      gameObjectValue: {fileID: 100000, guid: de3811773d77c524ea68c6244e40be65, type: 2}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    transitions:
+    - fromState: 2256f1f8-c3dd-461f-93a2-5b43b014c4e1
+      toState: 39d87c88-2242-45eb-b8e7-b6ee9cf7a0f8
+      conditions:
+      - type: 11
+        floatVal: .5
+        floatVal2: 0
+        stringValue: Shot
+        boolValue: 0
+        comparerType: 1
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: Shot -> Idle
+    update: []
+    ikActions:
+    - type: 5
+      ikGoal: 0
+      weight: 1
+      bodyWeight: .400000006
+      headWeight: 1
+      eyesWeight: 1
+      clampWeight: 1
+      vector3Value: {x: 0, y: 0, z: 0}
+      stringValue: 
+      setFloatType: 0
+    - type: 4
+      ikGoal: 0
+      weight: 1
+      bodyWeight: .400000006
+      headWeight: 1
+      eyesWeight: 1
+      clampWeight: 1
+      vector3Value: {x: 0, y: 0, z: 0}
+      stringValue: Player
+      setFloatType: 0
+    - type: 1
+      ikGoal: 3
+      weight: 1
+      bodyWeight: .400000006
+      headWeight: 1
+      eyesWeight: 1
+      clampWeight: 1
+      vector3Value: {x: 0, y: 0, z: 0}
+      stringValue: 
+      setFloatType: 0
+    - type: 0
+      ikGoal: 3
+      weight: 1
+      bodyWeight: .400000006
+      headWeight: 1
+      eyesWeight: 1
+      clampWeight: 1
+      vector3Value: {x: 0, y: 0, z: 0}
+      stringValue: Player
+      setFloatType: 0
+    isDefaultState: 0
+    properties:
+    - key: Damage
+      typeString: System.Int32
+      stringValue: 
+      floatValue: 0
+      intValue: 0
+      boolValue: 0
+      vector3Array: []
+      transform: {fileID: 0}
+    - key: Hit Chance
+      typeString: System.Single
+      stringValue: 
+      floatValue: 70
+      intValue: 0
+      boolValue: 0
+      vector3Array: []
+      transform: {fileID: 0}
+    applyRootMotion: 1
+  attributes: []
+  formula: []
+  runtimeAnimatorController: {fileID: 9100000, guid: e0a359fb3db5e1148988c2351b12361b,
+    type: 2}

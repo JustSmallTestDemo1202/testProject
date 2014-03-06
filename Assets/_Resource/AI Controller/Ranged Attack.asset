@@ -1,0 +1,484 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246fb4aa575ec5546ab2747bc133928b, type: 3}
+  m_Name: Ranged Attack
+  m_EditorClassIdentifier: 
+  states:
+  - id: 33f62856-c807-4200-adb5-7ddbefbe7d13
+    position:
+      serializedVersion: 2
+      x: 243
+      y: 578.794678
+      width: 150
+      height: 30
+    title: ' Any State'
+    typeString: AnyState
+    description: 
+    stateActions: []
+    transitions: []
+    update: []
+    ikActions: []
+    isDefaultState: 0
+    properties: []
+    applyRootMotion: 0
+  - id: 25a94ca0-9a7a-40c0-9192-8c6a92d01ccd
+    position:
+      serializedVersion: 2
+      x: 127
+      y: 464
+      width: 150
+      height: 30
+    title: Idle
+    typeString: SimpleState
+    description: 
+    stateActions:
+    - type: 3
+      targetType: 0
+      stringValue: Player
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    transitions:
+    - fromState: 25a94ca0-9a7a-40c0-9192-8c6a92d01ccd
+      toState: ebd3875e-5b47-45cc-bc96-9432016cd504
+      conditions:
+      - type: 5
+        floatVal: 180
+        floatVal2: 0
+        stringValue: 
+        boolValue: 1
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 256
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      - type: 1
+        floatVal: 15
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 1
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 256
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: Idle ->  Follow State
+    update:
+    - type: 8
+      targetType: 0
+      stringValue: Speed
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    ikActions: []
+    isDefaultState: 1
+    properties: []
+    applyRootMotion: 0
+  - id: ebd3875e-5b47-45cc-bc96-9432016cd504
+    position:
+      serializedVersion: 2
+      x: 258
+      y: 328
+      width: 150
+      height: 30
+    title: ' Follow Player'
+    typeString: FollowState
+    description: 
+    stateActions: []
+    transitions:
+    - fromState: ebd3875e-5b47-45cc-bc96-9432016cd504
+      toState: 25a94ca0-9a7a-40c0-9192-8c6a92d01ccd
+      conditions:
+      - type: 1
+        floatVal: 15
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: ' Follow State -> Idle'
+    - fromState: ebd3875e-5b47-45cc-bc96-9432016cd504
+      toState: 164fe457-0ad2-4442-8f98-74cfdf8d0828
+      conditions:
+      - type: 1
+        floatVal: 2.5
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 1
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: ' Follow State ->  Attack State'
+    - fromState: ebd3875e-5b47-45cc-bc96-9432016cd504
+      toState: aa916494-95a5-4715-b820-322da5d357b6
+      conditions:
+      - type: 10
+        floatVal: 1
+        floatVal2: 3
+        stringValue: 
+        boolValue: 0
+        comparerType: 1
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      - type: 1
+        floatVal: 15
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 1
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      - type: 1
+        floatVal: 5
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: ' Follow Player -> Ranged Attack'
+    update:
+    - type: 8
+      targetType: 0
+      stringValue: Speed
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 2
+      floatValue2: 2
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    ikActions: []
+    isDefaultState: 0
+    properties:
+    - key: Speed
+      typeString: System.Single
+      stringValue: 
+      floatValue: 3.29999995
+      intValue: 0
+      boolValue: 0
+      vector3Array: []
+      transform: {fileID: 0}
+    - key: Rotation
+      typeString: System.Single
+      stringValue: 
+      floatValue: 150
+      intValue: 0
+      boolValue: 0
+      vector3Array: []
+      transform: {fileID: 0}
+    applyRootMotion: 0
+  - id: 164fe457-0ad2-4442-8f98-74cfdf8d0828
+    position:
+      serializedVersion: 2
+      x: 352.600037
+      y: 464
+      width: 150
+      height: 30
+    title: ' Attack Player'
+    typeString: AttackState
+    description: 
+    stateActions:
+    - type: 11
+      targetType: 0
+      stringValue: Attack
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 4
+      targetType: 0
+      stringValue: 
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: .5
+      floatValue2: .5
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 12
+      targetType: 0
+      stringValue: 
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 8300000, guid: 17756be4c7bdcae40a68652d339e031d, type: 3}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 0
+      targetType: 1
+      stringValue: OnGetHit
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 4
+      targetType: 0
+      stringValue: 
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 2
+      floatValue2: 2
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    transitions:
+    - fromState: 164fe457-0ad2-4442-8f98-74cfdf8d0828
+      toState: ebd3875e-5b47-45cc-bc96-9432016cd504
+      conditions:
+      - type: 1
+        floatVal: 2.5
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      - type: 9
+        floatVal: 2
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      - type: 8
+        floatVal: 2
+        floatVal2: 0
+        stringValue: Base Layer.Attack
+        boolValue: 0
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: ' Attack Player ->  Follow Player'
+    update:
+    - type: 8
+      targetType: 0
+      stringValue: Speed
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 2
+      targetType: 1
+      stringValue: Speed
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    ikActions: []
+    isDefaultState: 0
+    properties:
+    - key: Damage
+      typeString: System.Int32
+      stringValue: 
+      floatValue: 0
+      intValue: 14
+      boolValue: 0
+      vector3Array: []
+      transform: {fileID: 0}
+    - key: Hit Chance
+      typeString: System.Single
+      stringValue: 
+      floatValue: 70
+      intValue: 0
+      boolValue: 0
+      vector3Array: []
+      transform: {fileID: 0}
+    applyRootMotion: 0
+  - id: aa916494-95a5-4715-b820-322da5d357b6
+    position:
+      serializedVersion: 2
+      x: 267.39978
+      y: 170
+      width: 150
+      height: 30
+    title: Ranged Attack
+    typeString: SimpleState
+    description: 
+    stateActions:
+    - type: 11
+      targetType: 0
+      stringValue: Ranged Attack
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: .5
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 4
+      targetType: 0
+      stringValue: 
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 1
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 12
+      targetType: 2
+      stringValue: 
+      gameObjectValue: {fileID: 100014, guid: 0172f6b4d19db6a4ba57c77abb52621f, type: 2}
+      vector3Value: {x: 0, y: -.5, z: 0}
+      floatValue: 1
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 8300000, guid: f7405da3782a9b54ea91cdaf53469507, type: 3}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 1
+      targetType: 2
+      stringValue: Finish
+      gameObjectValue: {fileID: 100014, guid: 0172f6b4d19db6a4ba57c77abb52621f, type: 2}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 4
+      targetType: 2
+      stringValue: 
+      gameObjectValue: {fileID: 100014, guid: 0172f6b4d19db6a4ba57c77abb52621f, type: 2}
+      vector3Value: {x: 0, y: -.5, z: 0}
+      floatValue: 2
+      floatValue2: 3
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    transitions:
+    - fromState: aa916494-95a5-4715-b820-322da5d357b6
+      toState: ebd3875e-5b47-45cc-bc96-9432016cd504
+      conditions:
+      - type: 0
+        floatVal: 2
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: Ranged Attack ->  Follow Player
+    update:
+    - type: 8
+      targetType: 0
+      stringValue: Speed
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 2
+      targetType: 1
+      stringValue: Speed
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    ikActions: []
+    isDefaultState: 0
+    properties: []
+    applyRootMotion: 0
+  attributes: []
+  formula: []
+  runtimeAnimatorController: {fileID: 9100000, guid: bf9629d694dee1d48a2cafd24cfa62b3,
+    type: 2}

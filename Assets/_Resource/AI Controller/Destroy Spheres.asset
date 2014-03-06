@@ -1,0 +1,257 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 246fb4aa575ec5546ab2747bc133928b, type: 3}
+  m_Name: Destroy Spheres
+  m_EditorClassIdentifier: 
+  states:
+  - id: 9ac0f680-8fda-40e7-9869-b6de21217e9e
+    position:
+      serializedVersion: 2
+      x: 247
+      y: 431
+      width: 150
+      height: 30
+    title: ' Any State'
+    typeString: AnyState
+    description: 
+    stateActions: []
+    transitions: []
+    update: []
+    ikActions: []
+    isDefaultState: 0
+    properties: []
+    applyRootMotion: 0
+  - id: ec1df0b2-4725-4b34-a32c-08de88786c68
+    position:
+      serializedVersion: 2
+      x: 435.390015
+      y: 289
+      width: 150
+      height: 30
+    title: Idle
+    typeString: SimpleState
+    description: 
+    stateActions:
+    - type: 3
+      targetType: 0
+      stringValue: DestroyMe
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    transitions:
+    - fromState: ec1df0b2-4725-4b34-a32c-08de88786c68
+      toState: bebe6a84-1e09-411e-bdf7-ad5e439ddcb9
+      conditions:
+      - type: 4
+        floatVal: 0
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 3
+        customCoditionValue: {fileID: 0}
+      - type: 0
+        floatVal: 1.5
+        floatVal2: 1.5
+        stringValue: 
+        boolValue: 1
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: Idle ->  Follow State
+    update:
+    - type: 8
+      targetType: 0
+      stringValue: Speed
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    ikActions: []
+    isDefaultState: 1
+    properties: []
+    applyRootMotion: 0
+  - id: bebe6a84-1e09-411e-bdf7-ad5e439ddcb9
+    position:
+      serializedVersion: 2
+      x: 103
+      y: 274.396057
+      width: 150
+      height: 30
+    title: ' Follow State'
+    typeString: FollowState
+    description: 
+    stateActions: []
+    transitions:
+    - fromState: bebe6a84-1e09-411e-bdf7-ad5e439ddcb9
+      toState: ddaca4b3-b57d-4fc0-97a3-aba4ed7e8325
+      conditions:
+      - type: 1
+        floatVal: 2
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 1
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: ' Follow State -> Destroy Sphere'
+    - fromState: bebe6a84-1e09-411e-bdf7-ad5e439ddcb9
+      toState: ec1df0b2-4725-4b34-a32c-08de88786c68
+      conditions:
+      - type: 4
+        floatVal: 0
+        floatVal2: 0
+        stringValue: 
+        boolValue: 1
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 3
+        customCoditionValue: {fileID: 0}
+      title: ' Follow State -> Idle'
+    update:
+    - type: 8
+      targetType: 0
+      stringValue: Speed
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 2
+      floatValue2: 2
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    ikActions: []
+    isDefaultState: 0
+    properties:
+    - key: Speed
+      typeString: System.Single
+      stringValue: 
+      floatValue: 3.29999995
+      intValue: 0
+      boolValue: 0
+      vector3Array: []
+      transform: {fileID: 0}
+    - key: Rotation
+      typeString: System.Single
+      stringValue: 
+      floatValue: 150
+      intValue: 0
+      boolValue: 0
+      vector3Array: []
+      transform: {fileID: 0}
+    applyRootMotion: 0
+  - id: ddaca4b3-b57d-4fc0-97a3-aba4ed7e8325
+    position:
+      serializedVersion: 2
+      x: 288
+      y: 163
+      width: 150
+      height: 30
+    title: Destroy Sphere
+    typeString: SimpleState
+    description: 
+    stateActions:
+    - type: 11
+      targetType: 0
+      stringValue: Attack
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 4
+      targetType: 0
+      stringValue: 
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 1
+      floatValue2: 1
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    - type: 5
+      targetType: 1
+      stringValue: 
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    transitions:
+    - fromState: ddaca4b3-b57d-4fc0-97a3-aba4ed7e8325
+      toState: ec1df0b2-4725-4b34-a32c-08de88786c68
+      conditions:
+      - type: 2
+        floatVal: 0
+        floatVal2: 0
+        stringValue: 
+        boolValue: 0
+        comparerType: 0
+        layerValue:
+          serializedVersion: 2
+          m_Bits: 0
+        targetInformationType: 0
+        customCoditionValue: {fileID: 0}
+      title: Destroy Sphere -> Idle
+    update:
+    - type: 8
+      targetType: 0
+      stringValue: Speed
+      gameObjectValue: {fileID: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+      floatValue: 0
+      floatValue2: 0
+      intValue: 0
+      boolValue: 0
+      audioClipValue: {fileID: 0}
+      setFloatType: 0
+      customActionValue: {fileID: 0}
+    ikActions: []
+    isDefaultState: 0
+    properties: []
+    applyRootMotion: 0
+  attributes: []
+  formula: []
+  runtimeAnimatorController: {fileID: 9100000, guid: 9bae1ad337942dc418dddc67b12ef01d,
+    type: 2}

@@ -1,0 +1,296 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fcacf5c6e8d7204e9c51e9ea4b453a0, type: 3}
+  m_Name: IK Position(Unity Pro)
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: 11400002}
+  - {fileID: 11400022}
+  - {fileID: 11400032}
+  parameters:
+  - {fileID: 11400006}
+  - {fileID: 11400018}
+  runtimeAnimatorController: {fileID: 9100000, guid: d7ad68e2e0bf504449a393342ad7186a,
+    type: 2}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ffa838b096b844eae0b690be376f70, type: 3}
+  m_Name: AnyState
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 177.5
+    y: 228
+    width: 150
+    height: 30
+  id: a2e25e38-144e-4496-9a8d-8dd59690a70d
+  isDefaultState: 0
+  transitions: []
+  actions: []
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95482cfc11cbcb34f826aa11ede7ffff, type: 3}
+  m_Name: OnAttributeChanged
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 761
+    y: 200
+    width: 150
+    height: 30
+  id: 060a2ecf-0d01-41c6-9448-313622bb0231
+  isDefaultState: 0
+  transitions: []
+  actions: []
+  attribute:
+    name: 
+    maxValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    multiplier: 0
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda3b1b6be2fc434ab3a7206b1fb9361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Left Hand
+  value: {fileID: 0}
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 0}
+  toState: {fileID: 0}
+  conditions:
+  - {fileID: 11400014}
+  - {fileID: 11400020}
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb4a08769880041963c79069f2de30, type: 3}
+  m_Name: IsNull
+  m_EditorClassIdentifier: 
+  target: Left Hand
+  equals: 0
+--- !u!114 &11400018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda3b1b6be2fc434ab3a7206b1fb9361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Look At
+  value: {fileID: 0}
+--- !u!114 &11400020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb4a08769880041963c79069f2de30, type: 3}
+  m_Name: IsNull
+  m_EditorClassIdentifier: 
+  target: Look At
+  equals: 0
+--- !u!114 &11400022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f6884a6455495438a35c5be923b6bc, type: 3}
+  m_Name: IK
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 446
+    y: 414
+    width: 150
+    height: 30
+  id: 74aa78b1-6912-4993-94b5-20e1c46ab630
+  isDefaultState: 0
+  transitions: []
+  actions:
+  - {fileID: 11400024}
+  - {fileID: 11400030}
+  applyRootMotion: 0
+--- !u!114 &11400024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a96dc4376e03740bc6b768e6e0ff28, type: 3}
+  m_Name: SetIKPosition(Clone)
+  m_EditorClassIdentifier: 
+  queue: 0
+  goal: 2
+  weight: 1
+  useGlobal: 1
+  globalPosition: Left Hand
+  position: {x: 0, y: 0, z: 0}
+--- !u!114 &11400030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c1f1528cea672a4c9987f46b10bceb6, type: 3}
+  m_Name: SetLookAtPosition(Clone)
+  m_EditorClassIdentifier: 
+  queue: 0
+  weight: 1
+  bodyWeight: .5
+  headWeight: 1
+  eyesWeight: 1
+  clampWeight: 1
+  useGlobal: 1
+  globalPosition: Look At
+  position: {x: 0, y: 0, z: 0}
+--- !u!114 &11400032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f6884a6455495438a35c5be923b6bc, type: 3}
+  m_Name: Set Targets
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 519
+    y: 134
+    width: 150
+    height: 30
+  id: 11f5e162-bc79-42a5-8f2a-6c244195bfa3
+  isDefaultState: 1
+  transitions:
+  - {fileID: 11400038}
+  actions:
+  - {fileID: 11400034}
+  - {fileID: 11400036}
+  applyRootMotion: 0
+--- !u!114 &11400034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb24976c8de0ca041956b05d462f78f1, type: 3}
+  m_Name: FindGameObject(Clone)
+  m_EditorClassIdentifier: 
+  queue: 0
+  tag: Left Hand
+  store: Left Hand
+--- !u!114 &11400036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb24976c8de0ca041956b05d462f78f1, type: 3}
+  m_Name: FindGameObject(Clone)
+  m_EditorClassIdentifier: 
+  queue: 0
+  tag: LookAt
+  store: Look At
+--- !u!114 &11400038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400032}
+  toState: {fileID: 11400022}
+  conditions:
+  - {fileID: 11400040}
+  - {fileID: 11400042}
+--- !u!114 &11400040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb4a08769880041963c79069f2de30, type: 3}
+  m_Name: IsNull(Clone)
+  m_EditorClassIdentifier: 
+  target: Left Hand
+  equals: 0
+--- !u!114 &11400042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb4a08769880041963c79069f2de30, type: 3}
+  m_Name: IsNull(Clone)
+  m_EditorClassIdentifier: 
+  target: Look At
+  equals: 0

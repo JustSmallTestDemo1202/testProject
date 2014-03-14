@@ -1,0 +1,506 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fcacf5c6e8d7204e9c51e9ea4b453a0, type: 3}
+  m_Name: IK Aim(Unity Pro)
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: 11400002}
+  - {fileID: 11400022}
+  - {fileID: 11400032}
+  - {fileID: 11400026}
+  parameters:
+  - {fileID: 11400006}
+  - {fileID: 11400018}
+  - {fileID: 11400050}
+  runtimeAnimatorController: {fileID: 9100000, guid: e0a359fb3db5e1148988c2351b12361b,
+    type: 2}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ffa838b096b844eae0b690be376f70, type: 3}
+  m_Name: AnyState
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 177.5
+    y: 227
+    width: 150
+    height: 30
+  id: a2e25e38-144e-4496-9a8d-8dd59690a70d
+  isDefaultState: 0
+  transitions: []
+  actions: []
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95482cfc11cbcb34f826aa11ede7ffff, type: 3}
+  m_Name: OnAttributeChanged
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 761
+    y: 200
+    width: 150
+    height: 30
+  id: 060a2ecf-0d01-41c6-9448-313622bb0231
+  isDefaultState: 0
+  transitions: []
+  actions: []
+  attribute:
+    name: 
+    maxValue:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+    multiplier: 0
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda3b1b6be2fc434ab3a7206b1fb9361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Spawnpoint
+  value: {fileID: 0}
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876583e70150e2041bfb8fd61ae7425c, type: 3}
+  m_Name: FindChild
+  m_EditorClassIdentifier: 
+  queue: 0
+  childName: Spawnpoint
+  store: Spawnpoint
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b21ca5982449a4f82cc38920537a93, type: 3}
+  m_Name: SetBool
+  m_EditorClassIdentifier: 
+  queue: 0
+  parameterName: PlayerInRange
+  value: 1
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 0}
+  toState: {fileID: 0}
+  conditions:
+  - {fileID: 11400014}
+  - {fileID: 11400020}
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb4a08769880041963c79069f2de30, type: 3}
+  m_Name: IsNull
+  m_EditorClassIdentifier: 
+  target: Left Hand
+  equals: 0
+--- !u!114 &11400016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a24532fc2500852439f7e22dc6f80fc7, type: 3}
+  m_Name: SetLayerWeight
+  m_EditorClassIdentifier: 
+  queue: 0
+  layer: 1
+  weight: 1
+--- !u!114 &11400018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda3b1b6be2fc434ab3a7206b1fb9361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Look At
+  value: {fileID: 0}
+--- !u!114 &11400020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb4a08769880041963c79069f2de30, type: 3}
+  m_Name: IsNull
+  m_EditorClassIdentifier: 
+  target: Look At
+  equals: 0
+--- !u!114 &11400022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f6884a6455495438a35c5be923b6bc, type: 3}
+  m_Name: IK
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 372
+    y: 414
+    width: 150
+    height: 30
+  id: 74aa78b1-6912-4993-94b5-20e1c46ab630
+  isDefaultState: 0
+  transitions:
+  - {fileID: 11400028}
+  actions:
+  - {fileID: 11400024}
+  - {fileID: 11400010}
+  - {fileID: 11400016}
+  applyRootMotion: 0
+--- !u!114 &11400024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a96dc4376e03740bc6b768e6e0ff28, type: 3}
+  m_Name: SetIKPosition(Clone)
+  m_EditorClassIdentifier: 
+  queue: 0
+  goal: 3
+  weight: 1
+  useGlobal: 1
+  globalPosition: Look At
+  position: {x: 0, y: 0, z: 0}
+--- !u!114 &11400026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f6884a6455495438a35c5be923b6bc, type: 3}
+  m_Name: Shoot
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 706
+    y: 400
+    width: 150
+    height: 30
+  id: 666c2a77-4923-4357-a313-ae4ce614e1ae
+  isDefaultState: 0
+  transitions:
+  - {fileID: 11400036}
+  actions:
+  - {fileID: 11400046}
+  - {fileID: 11400048}
+  - {fileID: 11400052}
+  - {fileID: 11400054}
+  - {fileID: 11400058}
+  - {fileID: 11400056}
+  applyRootMotion: 0
+--- !u!114 &11400028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400022}
+  toState: {fileID: 11400026}
+  conditions:
+  - {fileID: 11400030}
+--- !u!114 &11400030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ea54df8c88aba448899829f50b3730, type: 3}
+  m_Name: GetFloat
+  m_EditorClassIdentifier: 
+  parameterName: Shot
+  comparer: 0
+  value: .5
+--- !u!114 &11400032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f6884a6455495438a35c5be923b6bc, type: 3}
+  m_Name: Set Targets
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 519
+    y: 134
+    width: 150
+    height: 30
+  id: 11f5e162-bc79-42a5-8f2a-6c244195bfa3
+  isDefaultState: 1
+  transitions:
+  - {fileID: 11400038}
+  actions:
+  - {fileID: 11400034}
+  - {fileID: 11400008}
+  applyRootMotion: 0
+--- !u!114 &11400034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb24976c8de0ca041956b05d462f78f1, type: 3}
+  m_Name: FindGameObject(Clone)
+  m_EditorClassIdentifier: 
+  queue: 0
+  tag: LookAt
+  store: Look At
+--- !u!114 &11400036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400026}
+  toState: {fileID: 11400022}
+  conditions:
+  - {fileID: 11400044}
+--- !u!114 &11400038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400032}
+  toState: {fileID: 11400022}
+  conditions:
+  - {fileID: 11400040}
+  - {fileID: 11400042}
+--- !u!114 &11400040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb4a08769880041963c79069f2de30, type: 3}
+  m_Name: IsNull(Clone)
+  m_EditorClassIdentifier: 
+  target: Spawnpoint
+  equals: 0
+--- !u!114 &11400042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92fb4a08769880041963c79069f2de30, type: 3}
+  m_Name: IsNull(Clone)
+  m_EditorClassIdentifier: 
+  target: Look At
+  equals: 0
+--- !u!114 &11400044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3ea54df8c88aba448899829f50b3730, type: 3}
+  m_Name: GetFloat
+  m_EditorClassIdentifier: 
+  parameterName: Shot
+  comparer: 1
+  value: .5
+--- !u!114 &11400046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78a96dc4376e03740bc6b768e6e0ff28, type: 3}
+  m_Name: SetIKPosition
+  m_EditorClassIdentifier: 
+  queue: 0
+  goal: 3
+  weight: 1
+  useGlobal: 1
+  globalPosition: Look At
+  position: {x: 0, y: 0, z: 0}
+--- !u!114 &11400048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed99bf26688b6047adcf9744712563e, type: 3}
+  m_Name: Instantiate
+  m_EditorClassIdentifier: 
+  queue: 1
+  prefab: {fileID: 100014, guid: 9e91f7c357537134cb69b2f520e94501, type: 2}
+  useGlobal: 1
+  globalPosition: Spawnpoint
+  position: {x: 0, y: 0, z: 0}
+  angle: {x: 0, y: 0, z: 0}
+  store: Missle
+--- !u!114 &11400050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fda3b1b6be2fc434ab3a7206b1fb9361, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Missle
+  value: {fileID: 0}
+--- !u!114 &11400052
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20471094287f68449b2c3848b42dd2fa, type: 3}
+  m_Name: LookAt
+  m_EditorClassIdentifier: 
+  queue: 1
+  who: Missle
+  target: Look At
+  offset: {x: 0, y: 0, z: 0}
+  ignore: {x: 0, y: 0, z: 0}
+--- !u!114 &11400054
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac1f1e229d30f024887973ef1211b2d4, type: 3}
+  m_Name: SetActiveScript
+  m_EditorClassIdentifier: 
+  queue: 1
+  target: Missle
+  script: Move
+  state: 1
+--- !u!114 &11400056
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33d9f7a650c22374b8aadf2ab6c72ba7, type: 3}
+  m_Name: WaitForSeconds
+  m_EditorClassIdentifier: 
+  queue: 1
+  seconds:
+    min: 1.53298664
+    max: 1.53298664
+--- !u!114 &11400058
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b96f9c9db6483b4681ac3acfc26c553, type: 3}
+  m_Name: Play
+  m_EditorClassIdentifier: 
+  queue: 1
+  target: Missle
+  audioClip: {fileID: 8300000, guid: 0af3d513283ae634480aa98a0d2da839, type: 3}
+  volume: 1
+  minDistance: 3
+  maxDistance: 500

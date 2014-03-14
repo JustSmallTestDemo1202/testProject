@@ -1,0 +1,346 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fcacf5c6e8d7204e9c51e9ea4b453a0, type: 3}
+  m_Name: Random Walk(NavMeshAgent)(Root Motion)
+  m_EditorClassIdentifier: 
+  states:
+  - {fileID: 11400002}
+  - {fileID: 11400006}
+  - {fileID: 11400036}
+  parameters:
+  - {fileID: 11400032}
+  - {fileID: 11400034}
+  runtimeAnimatorController: {fileID: 9100000, guid: 9d9c4eb851d981346a72db4f424a8002,
+    type: 2}
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ffa838b096b844eae0b690be376f70, type: 3}
+  m_Name: AnyState
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 221
+    y: 178
+    width: 150
+    height: 30
+  id: 2cf0c752-e6de-4fe3-a8d2-12cdd1c73f60
+  isDefaultState: 0
+  transitions: []
+  actions: []
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61ba50ba2987c7545b10959603292f73, type: 3}
+  m_Name: Walk
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 345
+    y: 436
+    width: 150
+    height: 30
+  id: c1cfc869-c4df-4707-b26b-1c63995643d7
+  isDefaultState: 0
+  transitions:
+  - {fileID: 11400044}
+  actions:
+  - {fileID: 11400020}
+  - {fileID: 11400028}
+  - {fileID: 11400016}
+  - {fileID: 11400026}
+  applyRootMotion: 1
+  speed: 2
+  rotation: 150
+  range: 10
+  threshold: .5
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 0}
+  toState: {fileID: 11400006}
+  conditions:
+  - {fileID: 11400010}
+--- !u!114 &11400010
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7874130ddf3e3f45a792887f3d38995, type: 3}
+  m_Name: ExitTime
+  m_EditorClassIdentifier: 
+  seconds:
+    min: 6.29875994
+    max: 10.1504688
+--- !u!114 &11400014
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7874130ddf3e3f45a792887f3d38995, type: 3}
+  m_Name: ExitTime
+  m_EditorClassIdentifier: 
+  seconds:
+    min: 10.6796122
+    max: 17.4569473
+--- !u!114 &11400016
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf696f1367b5333439446e2a6f028c40, type: 3}
+  m_Name: SetFloat
+  m_EditorClassIdentifier: 
+  queue: 0
+  parameterName: Forward
+  useGlobal: 1
+  globalFloat: ForwardVelocity
+  value: .00999999978
+  dampTime: .150000006
+--- !u!114 &11400020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6a7cc395b0600b4b812b55e72ba4ce5, type: 3}
+  m_Name: GetProjectedVelocity
+  m_EditorClassIdentifier: 
+  queue: 0
+  store: ForwardVelocity
+--- !u!114 &11400022
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3e6979ec380f4998771d87b4e6c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: ForwardVelocity
+  value: 0
+--- !u!114 &11400024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3e6979ec380f4998771d87b4e6c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Turn
+  value: 0
+--- !u!114 &11400026
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf696f1367b5333439446e2a6f028c40, type: 3}
+  m_Name: SetFloat
+  m_EditorClassIdentifier: 
+  queue: 0
+  parameterName: Turn
+  useGlobal: 1
+  globalFloat: AngleVelocity
+  value: 0
+  dampTime: .600000024
+--- !u!114 &11400028
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7aff3cbda2e6fc0429d53e8a6b74d58e, type: 3}
+  m_Name: GetAngleVelocity
+  m_EditorClassIdentifier: 
+  queue: 0
+  store: AngleVelocity
+--- !u!114 &11400032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3e6979ec380f4998771d87b4e6c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: ForwardVelocity
+  value: 0
+--- !u!114 &11400034
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abe3e6979ec380f4998771d87b4e6c75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: AngleVelocity
+  value: 0
+--- !u!114 &11400036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f6884a6455495438a35c5be923b6bc, type: 3}
+  m_Name: Idle
+  m_EditorClassIdentifier: 
+  position:
+    serializedVersion: 2
+    x: 470
+    y: 210
+    width: 150
+    height: 30
+  id: bc3dc07f-1c86-4b6e-84d1-22e0419acdf0
+  isDefaultState: 1
+  transitions:
+  - {fileID: 11400042}
+  actions:
+  - {fileID: 11400038}
+  - {fileID: 11400040}
+  applyRootMotion: 1
+--- !u!114 &11400038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf696f1367b5333439446e2a6f028c40, type: 3}
+  m_Name: SetFloat(Clone)
+  m_EditorClassIdentifier: 
+  queue: 0
+  parameterName: Forward
+  useGlobal: 0
+  globalFloat: ForwardVelocity
+  value: 0
+  dampTime: .150000006
+--- !u!114 &11400040
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf696f1367b5333439446e2a6f028c40, type: 3}
+  m_Name: SetFloat(Clone)
+  m_EditorClassIdentifier: 
+  queue: 0
+  parameterName: Turn
+  useGlobal: 0
+  globalFloat: 
+  value: 0
+  dampTime: .150000006
+--- !u!114 &11400042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400036}
+  toState: {fileID: 11400006}
+  conditions:
+  - {fileID: 11400046}
+--- !u!114 &11400044
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94ad306fb79631e4c969d5d4b3d38f11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fromState: {fileID: 11400006}
+  toState: {fileID: 11400036}
+  conditions:
+  - {fileID: 11400048}
+--- !u!114 &11400046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7874130ddf3e3f45a792887f3d38995, type: 3}
+  m_Name: ExitTime(Clone)
+  m_EditorClassIdentifier: 
+  seconds:
+    min: 6.29875994
+    max: 10.1504688
+--- !u!114 &11400048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7874130ddf3e3f45a792887f3d38995, type: 3}
+  m_Name: ExitTime(Clone)
+  m_EditorClassIdentifier: 
+  seconds:
+    min: 10.6796122
+    max: 17.4569473

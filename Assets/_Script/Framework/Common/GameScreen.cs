@@ -51,11 +51,9 @@ public class GameScreen : MonoBehaviour
 
     public virtual void OnGUI()
     {
-#if TEST_GUI
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 200, 10, 400, 50));
         GUILayout.TextArea(GetType().Name);
         GUILayout.EndArea();
-#endif
     }
 
     public T AddScreen<T>() where T : GameScreen

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-
-public class GamePlay : GameScreen
+public class MainMenu : GameScreen
 {
-    public GamePlay()
+    public MainMenu()
     {
     }
 
@@ -20,12 +19,12 @@ public class GamePlay : GameScreen
     public override void OnGUI()
     {
         base.OnGUI();
-
+  
         GUILayout.BeginArea(new Rect(Screen.width / 2 - 200, 200, 400, 100));
 
-        if (GUILayout.Button("Quit"))
+        if (GUILayout.Button("Start"))
         {
-            Framework.ScreenManager.ChangeScreen(typeof(MainMenu));
+            Framework.ScreenManager.ChangeScreen(typeof(GamePlay));
         }
 
         GUILayout.EndArea();

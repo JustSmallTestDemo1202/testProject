@@ -14,6 +14,7 @@ public class GuiScreen : GameScreen
     public GuiScreen(string uifile = "")
     {
         uiFile = uifile;
+        this.useGUILayout = false;
     }
 
     public GameObject UIObject

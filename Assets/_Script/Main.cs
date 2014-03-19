@@ -26,6 +26,7 @@ namespace IceFire
                 Framework.AddComponent<SceneManager>();
                 Framework.AddComponent<EffectManager>();
 
+                Framework.ScreenManager.AddScreen<MainMenu>();
                 Framework.ScreenManager.AddScreen<GamePlay>();
                 /*
                      uiRoot = GameObject.Find("UI Root (3D)");
@@ -40,7 +41,7 @@ namespace IceFire
                      }
                    */
 
-                Framework.ScreenManager.ChangeScreen(typeof(GamePlay));
+                Framework.ScreenManager.ChangeScreen(typeof(MainMenu));
 
             }
         }
